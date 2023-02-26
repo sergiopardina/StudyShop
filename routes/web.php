@@ -26,11 +26,14 @@ Route::group(['middleware' => ['setLocale']], function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::middleware('auth')->group(function () {
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+Route::get('/catalog', function () {
+    return view('catalog');
+});
 
     Route::get('/admin/index', [AdminController::class, 'index'])->name('admins.index');
 
@@ -45,4 +48,14 @@ Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])
 
 
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+Route::get('/account', function () {
+    return view('account');
+});
 require __DIR__.'/auth.php';
