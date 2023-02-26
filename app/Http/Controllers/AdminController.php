@@ -44,7 +44,7 @@ class AdminController extends Controller
         $admin->phone = $request->input('phone');
         $admin->save();
 
-        return redirect()->route('admins.index')->with('success', __('Admin updated successfully'));
+        return redirect()->route('admins.index')->with('success', __('Admin updated'));
     }
 
 }
