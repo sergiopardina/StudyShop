@@ -1417,5 +1417,16 @@
     "auth.throttle": "Забагато спроб входу. Будь ласка, повторіть спробу через :seconds секунд.",
     "validation.confirmed": "Паролі не співпадають!",
     "validation.min.string": "Пароль повинен містити не менше 8 символів",
-    "You are logged in!": "Вітаємо у системі контролю DH Control Systems"
+    "You are logged in!": "Вітаємо у системі контролю DH Control Systems",
+    "Content": "Загальне",
+    "All categories": "Всі категорії",
+    "Discount products": "Акційні товари",
+    "Orders": "Замовлення",
+    "Completed": "Завершені",
+    "In progress": "В процесі",
+    "Failures": "Відмови",
+    "Admins": "Адміністратори",
+    "All personal": "Всі адміністратори",
+    "Add new admin": "Додати нового",
+    "Assign roles": "Призначити ролі"
 }

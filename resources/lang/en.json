@@ -1416,5 +1416,16 @@
     "auth.password": "The provided password is incorrect.",
     "auth.throttle": "Too many login attempts. Please try again in :seconds seconds.",
     "validation.confirmed": "Passwords do not match!",
-    "validation.min.string": "Password must be at least 8 characters long"
+    "validation.min.string": "Password must be at least 8 characters long",
+    "Content": "Content",
+    "All categories": "All categories",
+    "Discount products": "Discount products",
+    "Orders": "Orders",
+    "Completed": "Completed",
+    "In progress": "In progress",
+    "Failures": "Failures",
+    "Admins": "Admins",
+    "All personal": "All personal",
+    "Add new admin": "Add new admin",
+    "Assign roles": "Assign roles"
 }
