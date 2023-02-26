@@ -1427,5 +1427,9 @@
     "Admins": "Admins",
     "All personal": "All personal",
     "Add new admin": "Add new admin",
-    "Assign roles": "Assign roles"
+    "Assign roles": "Assign roles",
+    "All Admins": "All Admins",
+    "Phone": "№ Tel",
+    "Admin deleted": "Admin has been deleted successfully",
+    "Admin updated": "Admin updated successfully"
 }
