@@ -33,6 +33,8 @@ class AdminController extends Controller
     {
         $admin = Admin::findOrFail($id);
 
+
+        //TODO validation
 //        $request->validate([
 //            'name' => 'required',
 //            'email' => 'required|email' . $admin->id,
