@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/catalog', function () {
+    return view('catalog');
+});
 
 Route::get('/admin/index', [AdminController::class, 'index'])->name('admins.index');
 
@@ -41,4 +44,14 @@ Route::get('/admin/edit/{admin}', [AdminController::class, 'edit'])->name('admin
 Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
 
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+Route::get('/account', function () {
+    return view('account');
+});
 require __DIR__.'/auth.php';
