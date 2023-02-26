@@ -26,14 +26,15 @@ Route::group(['middleware' => ['setLocale']], function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+    Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-Route::get('/catalog', function () {
+    });
+
+    Route::get('/catalog', function () {
     return view('catalog');
-});
+    });
 
     Route::get('/admin/index', [AdminController::class, 'index'])->name('admins.index');
 
@@ -44,9 +45,6 @@ Route::get('/catalog', function () {
     Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])->name('locale.update');
-
-
-
 
 Route::get('/about', function () {
     return view('about');
