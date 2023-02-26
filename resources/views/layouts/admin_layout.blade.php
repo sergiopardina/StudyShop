@@ -9,10 +9,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="icon" type="image/x-image" href="{{ asset('images/icon.png') }}">
-        <link rel="stylesheet" href="css/admin.css">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -32,6 +32,7 @@
                 });
             });
         </script>
+        <link rel="stylesheet" href="/css/admin.css">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -48,6 +49,53 @@
 
             <!-- Page Content -->
             <main>
+                <x-slot name="header">
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        {{ __('Dashboard') }}
+                    </h2>
+                </x-slot>
+                <div class="main-wrapper">
+                    <aside>
+                        <ul>
+                            <li class="content"><i class="bi bi-grid-fill"></i>{{__('Content')}}<i
+                                    class="fa fa-angle-down pull-right"></i>
+                                <div class="dropdown-content-menu drop-down">
+                                    <ul>
+                                        <li><a href=""><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
+                                        <li><a href=""><i class="bi bi-piggy-bank-fill"></i>{{__('Discount products')}}</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="users"><i class="bi bi-person-circle"></i>{{__('Users')}}<i
+                                    class="fa fa-angle-down pull-right"></i>
+                                <div class="dropdown-users-menu drop-down">
+                                    <ul>
+                                        <li><i class="bi bi-cart-fill"></i>{{__('Orders')}}
+                                            <div>
+                                                <ul>
+                                                    <li><a href=""><i class="bi bi-cart-check-fill"></i>{{__('Completed')}}</a></li>
+                                                    <li><a href=""><i class="bi bi-cart-plus-fill"></i>{{__('In progress')}}</a>
+                                                    </li>
+                                                    <li><a href=""><i class="bi bi-cart-x-fill"></i>{{__('Failures')}}</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="admins"><i class="bi bi-people-fill"></i>{{__('Admins')}}<i
+                                    class="fa fa-angle-down pull-right"></i>
+                                <div class="dropdown-admins-menu drop-down">
+                                    <ul>
+                                        <li><a href={{route('admins.index')}}><i class="bi bi-person-rolodex"></i>{{__('All personal')}}</a></li>
+                                        <li><a href=""><i class="bi bi-person-plus-fill"></i>{{__('Add new admin')}}</a></li>
+                                        <li><a href=""><i class="bi bi-person-check-fill"></i>{{__('Assign roles')}}</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
                 @yield('content')
             </main>
         </div>
