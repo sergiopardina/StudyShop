@@ -91,5 +91,11 @@ main>.table{
     color: white;
 }
 
+select {
+    font-size: 12px;
+    border: none;
+    height: 100%;
+}
+
 
 

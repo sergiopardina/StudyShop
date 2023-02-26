@@ -16,6 +16,17 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                {{-- Lang bar --}}
+                <div class="hidden space-x-8 sm:ml-10 sm:flex">
+                    <form method="POST" action="{{ route('locale.update') }}">
+                        @csrf
+                        <select name="locale" onchange="this.form.submit()">
+                            <option class="flag flag-usa" value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
+                            <option class="flag flag-uk" value="uk" {{ app()->getLocale() == 'uk' ? 'selected' : '' }}>UA</option>
+                        </select>
+                    </form>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
