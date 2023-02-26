@@ -1,8 +1,11 @@
+main{
+    font-family: "Linux Libertine G";
+}
+
 aside{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 20%;
     border-right: 1px solid #c8c9bf;
 }
 
@@ -32,6 +35,15 @@ ul>li{
     font-size: 18px;
 }
 
+a{
+    font-size: 14px;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #e25346;
+}
+
 .drop-down{
     display: none;
 }
@@ -44,5 +56,40 @@ i{
     font-size: 16px;
     margin-right: 4%;
 }
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+
+caption{
+    caption-side: top;
+    font-size: 18px;
+}
+
+.main-wrapper{
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+main>.table{
+    margin-bottom: 0px;
+    width: 97%;
+}
+
+.btn-danger {
+    background-color: #e25346;
+}
+.btn-danger:hover{
+    color: black;
+}
+
+.btn-warning {
+    background-color: #e2973a;
+    color: white;
+}
+
 
 
