@@ -1,0 +1,48 @@
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 20%;
+    border-right: 1px solid #c8c9bf;
+}
+
+aside ul{
+    width: 100%;
+}
+
+
+.drop-down ul>li{
+    font-size: 12px;
+}
+
+ul li>i {
+    padding-right: 5px;
+}
+
+ul>li:hover{
+    /*background-color: #e1e2d8;*/
+    color: #e25346;
+    cursor: pointer;
+}
+
+ul>li{
+    padding: 10px 9.5%;
+    list-style: none;
+    color: black;
+    font-size: 18px;
+}
+
+.drop-down{
+    display: none;
+}
+
+img {
+    width: 50px;
+}
+
+i{
+    font-size: 16px;
+    margin-right: 4%;
+}
+
+
