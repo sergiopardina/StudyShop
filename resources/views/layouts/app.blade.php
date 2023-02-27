@@ -26,9 +26,11 @@
                         <div class="dropbox-catalog">
                             <p>{{ __('Catalog') }} &#9660;</p>
                             <div class="dropbox">
-                                @foreach($categories as $category)
-                                    <a>{{$category->name}}</a>
-                                @endforeach
+                                @if(isset($categories))
+                                    @foreach($categories as $category)
+                                        <a>{{$category->name}}</a>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                             <div id="menu" class="menu">
