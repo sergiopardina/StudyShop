@@ -48,8 +48,8 @@ a:hover{
     display: none;
 }
 
-img {
-    width: 50px;
+img.logo {
+    width: 170px;
 }
 
 i{
