@@ -15,10 +15,10 @@ use App\Http\Controllers\AdminController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
 Route::group(['middleware' => ['setLocale']], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [\App\Http\Controllers\CategoryController::class, 'index'])->name('welcome');
 
     Route::get('/admin', [AuthController::class, 'login'])->name('admin');
 
@@ -32,8 +32,8 @@ Route::group(['middleware' => ['setLocale']], function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::get('/catalog', function () {
-    return view('catalog');
+    Route::get('/cart', function () {
+    return view('cart');
     });
 
     Route::get('/admin/index', [AdminController::class, 'index'])->name('admins.index');
@@ -43,17 +43,18 @@ Route::group(['middleware' => ['setLocale']], function () {
     Route::get('/admin/edit/{admin}', [AdminController::class, 'edit'])->name('admins.edit');
 
     Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
+
+    Route::get('/about', function () {
+        return view('about');
+    });
+
+    Route::get('/contacts', function () {
+        return view('contacts');
+    });
+    Route::get('/account', function () {
+        return view('account');
+    });
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])->name('locale.update');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-Route::get('/account', function () {
-    return view('account');
-});
 require __DIR__.'/auth.php';
