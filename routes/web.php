@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,13 @@ Route::group(['middleware' => ['setLocale']], function () {
     Route::get('/admin/edit/{admin}', [AdminController::class, 'edit'])->name('admins.edit');
 
     Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
+
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])->name('locale.update');
 
