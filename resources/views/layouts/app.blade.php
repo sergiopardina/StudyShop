@@ -21,15 +21,39 @@
 
             <!-- Page Heading -->
                 <header>
-                    <h1>Study Shop</h1>
-                    @include('layouts.main_navi')
+                    <a href="/"><h1>Study Shop</h1></a>
+                    <nav>
+                        <div class="dropbox-catalog">
+                            <p>{{ __('Catalog') }} &#9660;</p>
+                            <div class="dropbox">
+                                @if(isset($categories))
+                                    @foreach($categories as $category)
+                                        <a>{{$category->name}}</a>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                            <div id="menu" class="menu">
+                                <ul>
+                                    <li><a href="/about">{{ __('About us') }}</a></li>
+                                    <li><a href="/contacts">{{ __('Contacts') }}</a></li>
+                                    <li><a href="/account">{{ __('Personal account') }}</a></li>
+                                </ul>
+                            </div>
+                            <div id="search_bar" class="search_bar">
+                                <form>
+                                    <input type="text" name=text" class="search" placeholder="{{ __('Search here') }}">
+                                    <input type="submit" name="submit" class="submit" value="{{ __('Search') }}">
+                                </form>
+                            </div>
+                            <div id="cart" class="cart">
+                                <a href="/cart"><img src="images/carticon.png" alt="Cart"></a>
+                            </div>
+                    </nav>
                 </header>
 
             <!-- Page Content -->
             <main>
-                <div id="lsb" class="lsb">
-                    <p>It will be category list</p>
-                </div>
                 <div id="content" class="content">
                     @yield('content')
                 </div>

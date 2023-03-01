@@ -1,3 +1,46 @@
 img {
     width: 50px;
 }
+nav{
+    display: flex;
+    align-items: flex-start;
+}
+.menu{
+    margin-left: 280px;
+}
+.search_bar{
+    margin-left: 80px;
+}
+.cart{
+    margin-left: 80px;
+}
+ul li{
+    float: left;
+    padding: 8px;
+}
+.dropbox-catalog {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+}
+.dropbox {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    background-color: #f3f4f6;
+}
+.dropbox a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+.dropbox a:hover{
+    background-color: #a0aec0;
+}
+.dropbox-catalog:hover .dropbox {
+    display: block;
+}
+.dropbox-catalog:hover{
+    cursor: pointer;
+}

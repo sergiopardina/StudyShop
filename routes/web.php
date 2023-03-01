@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,14 +53,14 @@ Route::group(['middleware' => ['setLocale']], function () {
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])->name('locale.update');
 
-Route::get('/about', function () {
-    return view('about');
-});
+    Route::get('/about', function () {
+        return view('about');
+    });
 
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-Route::get('/account', function () {
-    return view('account');
-});
+    Route::get('/contacts', function () {
+        return view('contacts');
+    });
+    Route::get('/account', function () {
+        return view('account');
+    });
 require __DIR__.'/auth.php';

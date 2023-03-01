@@ -1,4 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <h2>Contacts</h2>
+<h2>Cart</h2>
 @endsection
+

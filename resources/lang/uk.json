@@ -1435,6 +1435,13 @@
     "Assign roles": "Призначити ролі",
     "Admin deleted": "Адміністратор успішно видалений",
     "Admin updated": "Адміністратор успішно редагований",
+    "Search here": "Шукати тут",
+    "About us": "Про нас",
+    "Contacts": "Контакти",
+    "Personal account": "Персональний аккаунт",
+    "Cart": "Кошик",
+    "Our graduation project": "Наш випускний проект",
+    "Catalog": "Каталог",
     "Popular": "Популярний",
     "Something wrong": "Щось не так",
     "validation.attributes": {
