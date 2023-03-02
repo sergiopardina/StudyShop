@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use \App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ use App\Http\Controllers\AdminController;
 
 
 Route::group(['middleware' => ['setLocale']], function () {
-    Route::get('/', [\App\Http\Controllers\CategoryController::class, 'index'])->name('welcome');
+    Route::get('/', function () {
+        return view('dashboard');
+    });
 
     Route::get('/admin', [AuthController::class, 'login'])->name('admin');
 
@@ -27,14 +30,13 @@ Route::group(['middleware' => ['setLocale']], function () {
     })->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::get('/', [AuthController::class, 'checkChangePass'])->name('change.password');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::get('/cart', function () {
-    return view('cart');
-    });
+    Route::get('/', [\App\Http\Controllers\CategoryController::class, 'index'])->name('welcome');
 
     Route::get('/admin/index', [AdminController::class, 'index'])->name('admins.index');
 
@@ -44,17 +46,25 @@ Route::group(['middleware' => ['setLocale']], function () {
 
     Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
 
-    Route::get('/about', function () {
-        return view('about');
-    });
+    Route::get('/admins/add', [AdminController::class, 'add'])->name('admins.add');
 
-    Route::get('/contacts', function () {
-        return view('contacts');
-    });
-    Route::get('/account', function () {
-        return view('account');
-    });
+    Route::post('/admins/index', [AdminController::class, 'store'])->name('admins.create');
+
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])->name('locale.update');
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+Route::get('/account', function () {
+    return view('account');
+});
+
+
+
 require __DIR__.'/auth.php';
+
