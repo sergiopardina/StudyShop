@@ -29,12 +29,30 @@ class AuthController
             }
             else
             {
-                return redirect()->route('dashboard');
+//                return redirect()->route('welcome');
             }
         }
         else
         {
             return view('auth.login');
+        }
+    }
+
+    public function checkChangePass()
+    {
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            if ($user->must_change_password)
+            {
+                return view('admins.password_change');
+            } else
+            {
+                return view('welcome');
+            }
+        } else
+        {
+            return view('welcome');
         }
     }
 }
