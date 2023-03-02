@@ -88,7 +88,7 @@
                                 <div class="dropdown-admins-menu drop-down">
                                     <ul>
                                         <li><a href={{route('admins.index')}}><i class="bi bi-person-rolodex"></i>{{__('All personal')}}</a></li>
-                                        <li><a href=""><i class="bi bi-person-plus-fill"></i>{{__('Add new admin')}}</a></li>
+                                        <li><a href="{{route('admins.add')}}"><i class="bi bi-person-plus-fill"></i>{{__('Add new admin')}}</a></li>
                                         <li><a href=""><i class="bi bi-person-check-fill"></i>{{__('Assign roles')}}</a></li>
                                     </ul>
                                 </div>
