@@ -21,15 +21,16 @@
                 <td>{{ $admin->name }}</td>
                 <td>{{ $admin->email }}</td>
                 <td>{{ $admin->phone }}</td>
-                <td>
+                <td class="actions">
                     @if(Auth::user()->name !== $admin->name)
-                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST">
+                    <form class="bnt-1" action="{{ route('admins.destroy', $admin->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                     </form>
                     @endif
-                    <a href="{{route('admins.edit', $admin)}}"><button class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button></a>
+                    <a class="btn-2" href="{{route('admins.edit', $admin)}}"><button class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button></a>
+                    <a class="btn-3" href=""><button class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button></a>
                 </td>
             </tr>
         @endforeach
