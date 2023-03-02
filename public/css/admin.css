@@ -22,13 +22,13 @@ ul li>i {
     padding-right: 5px;
 }
 
-ul>li:hover{
+aside ul>li:hover{
     /*background-color: #e1e2d8;*/
     color: #e25346;
     cursor: pointer;
 }
 
-ul>li{
+aside ul>li{
     padding: 10px 9.5%;
     list-style: none;
     color: black;
@@ -96,6 +96,29 @@ select {
     border: none;
     height: 100%;
 }
+
+td.actions {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    column-span: 3;
+}
+
+.btn-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.btn-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.btn-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
 
 
 
