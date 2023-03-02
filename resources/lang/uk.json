@@ -1235,7 +1235,7 @@
     "regex": "Поле :attribute має хибний формат.",
     "relatable": "Цей :attribute може бути не пов'язаний з цим ресурсом.",
     "remove_team_member": "Видалити члена команди",
-    "required": "Поле :attribute є обов'язковим для заповнення.",
+    "validation.required": "Поле :attribute є обов'язковим для заповнення.",
     "required_array_keys": "Поле :attribute має містити записи для: :values.",
     "required_if": "Поле :attribute є обов'язковим для заповнення, коли :other є рівним :value.",
     "required_if_accepted": "Поле :attribute є обов'язковим, якщо прийнято :other.",
@@ -1419,7 +1419,16 @@
     "validation.min.string": "Пароль повинен містити не менше 8 символів",
     "You are logged in!": "Вітаємо у системі контролю DH Control Systems",
     "Content": "Загальне",
-    "All categories": "Всі категорії",
+    "All categories": "Усі категорії",
+    "Create new category": "Створити нову категорію",
+    "Add category": "Додати категорію",
+    "Edit category": "Редагувати категорію",
+    "No categories": "Категорії відсутні",
+    "All brands": "Усі бренди",
+    "Create new brand": "Створити новий бренд",
+    "Add brand": "Додати бренд",
+    "Edit brand": "Редагувати бренд",
+    "No brands": "Бренди відсутні",
     "Discount products": "Акційні товари",
     "Orders": "Замовлення",
     "Completed": "Завершені",
@@ -1438,6 +1447,9 @@
     "Cart": "Кошик",
     "Our graduation project": "Наш випускний проект",
     "Catalog": "Каталог",
-    "unique_for_user": "Коричтувач з таким :attribute вже зареєстрований"
-
+    "Popular": "Популярний",
+    "Something wrong": "Щось не так",
+    "validation.attributes": {
+        "name": "ім'я"
+    }
 }

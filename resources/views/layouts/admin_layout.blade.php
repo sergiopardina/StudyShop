@@ -61,7 +61,8 @@
                                     class="fa fa-angle-down pull-right"></i>
                                 <div class="dropdown-content-menu drop-down">
                                     <ul>
-                                        <li><a href=""><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
+                                        <li><a href="{{ route('category.index') }}"><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
+                                        <li><a href="{{ route('brand.index') }}"><i class="bi bi-list-check"></i>{{__('All brands')}}</a></li>
                                         <li><a href=""><i class="bi bi-piggy-bank-fill"></i>{{__('Discount products')}}</a></li>
                                     </ul>
                                 </div>

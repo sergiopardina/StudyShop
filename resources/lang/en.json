@@ -1419,6 +1419,15 @@
     "validation.min.string": "Password must be at least 8 characters long",
     "Content": "Content",
     "All categories": "All categories",
+    "Create new category": "Create new category",
+    "Add category": "Add category",
+    "Edit category": "Edit category",
+    "No categories": "No categories",
+    "All brands": "All brands",
+    "Create new brand": "Create new brand",
+    "Add brand": "Add brand",
+    "Edit brand": "Edit brand",
+    "No brands": "No brands",
     "Discount products": "Discount products",
     "Orders": "Orders",
     "Completed": "Completed",
@@ -1441,5 +1450,7 @@
     "Cart": "Cart",
     "Our graduation project": "Our graduation project",
     "Catalog": "Catalog"
-
+    "Admin updated": "Admin updated successfully",
+    "Popular": "Popular",
+    "Something wrong": "Something wrong"
 }
