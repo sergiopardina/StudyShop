@@ -28,8 +28,17 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
-        return view('account');
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            if ($user->must_change_password)
+            {
+                return redirect()->route('change.password');
+            } else
+            {
+                return view('account');
+            }
+        }
     }
 
     /**
@@ -43,6 +52,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

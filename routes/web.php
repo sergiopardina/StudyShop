@@ -23,9 +23,6 @@ Route::group(['middleware' => ['setLocale']], function () {
         return view('welcome');
     });
 
-    Route::get('/admin', [AuthController::class, 'login'])
-        ->name('admin');
-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])
@@ -33,32 +30,39 @@ Route::group(['middleware' => ['setLocale']], function () {
 
     Route::middleware('auth')
         ->group(function () {
-//        Route::get('/', [AuthController::class, 'checkChangePass'])->name('change.password');
-        Route::get('/profile', [ProfileController::class, 'edit'])
-            ->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])
-            ->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])
-            ->name('profile.destroy');
-    });
+            Route::get('/password_change', function () {
+                return view('auth.password_change');
+            })->name('change.password');
+            Route::middleware('passwordChanged')
+                ->group(function () {
+                    Route::get('/admin', [AuthController::class, 'login'])
+                        ->name('admin');
+
+                    Route::get('/profile', [ProfileController::class, 'edit'])
+                        ->name('profile.edit');
+                    Route::patch('/profile', [ProfileController::class, 'update'])
+                        ->name('profile.update');
+                    Route::delete('/profile', [ProfileController::class, 'destroy'])
+                        ->name('profile.destroy');
+
+                    Route::get('/admin/index', [AdminController::class, 'index'])
+                        ->name('admins.index');
+                    Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
+                        ->name('admins.destroy');
+                    Route::get('/admin/edit/{admin}', [AdminController::class, 'edit'])
+                        ->name('admins.edit');
+                    Route::put('/admins/{admin}', [AdminController::class, 'update'])
+                        ->name('admins.update');
+                    Route::get('/admins/add', [AdminController::class, 'add'])
+                        ->name('admins.add');
+                    Route::post('/admins/index', [AdminController::class, 'store'])
+                        ->name('admins.create');
+            });
+        });
 
     Route::get('/catalog', function () {
-    return view('catalog');
+        return view('catalog');
     });
-
-    Route::get('/admin/index', [AdminController::class, 'index'])
-        ->name('admins.index');
-    Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
-        ->name('admins.destroy');
-    Route::get('/admin/edit/{admin}', [AdminController::class, 'edit'])
-        ->name('admins.edit');
-    Route::put('/admins/{admin}', [AdminController::class, 'update'])
-        ->name('admins.update');
-    Route::get('/admins/add', [AdminController::class, 'add'])
-        ->name('admins.add');
-    Route::post('/admins/index', [AdminController::class, 'store'])
-        ->name('admins.create');
-
     Route::get('/about', function () {
         return view('about');
     });
