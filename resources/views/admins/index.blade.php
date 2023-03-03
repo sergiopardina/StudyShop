@@ -12,6 +12,7 @@
             <th>{{__('Name')}}</th>
             <th>{{__('Email')}}</th>
             <th>{{__('Phone')}}</th>
+            <th>Telegram</th>
             <th>{{__('Action')}}</th>
         </tr>
         </thead>
@@ -21,6 +22,7 @@
                 <td>{{ $admin->name }}</td>
                 <td>{{ $admin->email }}</td>
                 <td>{{ $admin->phone }}</td>
+                <td><a href="tg://resolve?domain={{ $admin->telegram }}">Telegram</a></td>
                 <td class="actions">
                     <a class="btn-1" href="{{route('admins.edit', $admin)}}"><button class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button></a>
                     @if(Auth::user()->name !== $admin->name)
