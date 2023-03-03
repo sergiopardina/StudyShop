@@ -1436,7 +1436,7 @@
     "Admins": "Admins",
     "All personal": "All personal",
     "Add new admin": "Add new admin",
-    "Assign roles": "Assign roles",
+    "Update roles": "Update roles",
     "All Admins": "All Admins",
     "Phone": "№ Tel",
     "Admin deleted": "Admin has been deleted successfully",
@@ -1452,5 +1452,7 @@
     "Catalog": "Catalog",
     "Admin updated": "Admin updated successfully",
     "Popular": "Popular",
-    "Something wrong": "Something wrong"
+    "Something wrong": "Something wrong",
+    "welcome_to_admin_panel": "Welcome to the control system StudyShop,",
+    "role_type": "Your clearance level: "
 }

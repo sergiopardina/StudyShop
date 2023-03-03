@@ -83,6 +83,10 @@ class AdminController extends Controller
         return redirect()->route('admins.index');
     }
 
+    public function checkRoles()
+    {
+        return view('admins.roles');
+    }
 
 
 }

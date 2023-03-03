@@ -1437,7 +1437,7 @@
     "Admins": "Адміністратори",
     "All personal": "Всі адміністратори",
     "Add new admin": "Додати нового",
-    "Assign roles": "Призначити ролі",
+    "Update roles": "Редагувати ролі",
     "Admin deleted": "Адміністратор успішно видалений",
     "Admin updated": "Адміністратор успішно редагований",
     "Search here": "Шукати тут",
@@ -1449,6 +1449,9 @@
     "Catalog": "Каталог",
     "Popular": "Популярний",
     "Something wrong": "Щось не так",
+    "All Admins": "Всі адміни",
+    "welcome_to_admin_panel": "Вітаємо в системі контролю StudyShop,",
+    "role_type": "Ваш рівень допуску: ",
     "validation.attributes": {
         "name": "ім'я"
     }

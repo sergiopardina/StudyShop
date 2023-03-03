@@ -57,6 +57,8 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('admins.add');
                     Route::post('/admins/index', [AdminController::class, 'store'])
                         ->name('admins.create');
+                    Route::get('/admins/roles', [AdminController::class, 'checkRoles'])
+                        ->name('admins.roles');
             });
         });
 
