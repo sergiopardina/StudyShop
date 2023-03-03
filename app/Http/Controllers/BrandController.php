@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CategoryController extends Controller
+class BrandController extends Controller
 {
 
     public function __construct()
@@ -19,9 +19,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('category.index', [
-            'categories' => $categories,
+        $brands = Brand::all();
+        return view('brand.index', [
+            'brands' => $brands,
         ]);
     }
 
@@ -30,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('brand.create');
     }
 
     /**
@@ -42,20 +42,19 @@ class CategoryController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $сategory = new Category();
-        $сategory->name = $request->name;
-        $сategory->top = !is_null($request->top);
+        $brand = new Brand();
+        $brand->name = $request->name;
 
-        $сategory->save();
+        $brand->save();
 
         return redirect()
-            ->route('category.index');
+            ->route('brand.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Brand $brand)
     {
         //
     }
@@ -63,37 +62,37 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(Brand $brand)
     {
-        return view('category.edit',[
-            'category' => $category,
+        return view('brand.edit',[
+            'brand' => $brand,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Brand $brand)
     {
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
 
-        $category->name = $request->name;
-        $category->top = !is_null($request->top);
+        $brand->name = $request->name;
 
-        $category->save();
+        $brand->save();
 
         return redirect()
-            ->route('category.index');
+            ->route('brand.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Brand $brand)
     {
-        $category->delete();
-        return redirect()->route('category.index');
+        $brand->delete();
+        return redirect()->route('brand.index');
     }
+
 }

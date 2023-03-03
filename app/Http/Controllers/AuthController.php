@@ -29,7 +29,7 @@ class AuthController
             }
             else
             {
-                return redirect()->route('dashboard');
+                return redirect()->route('welcome');
             }
         }
         else

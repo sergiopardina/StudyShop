@@ -61,7 +61,8 @@
                                     class="fa fa-angle-down pull-right"></i>
                                 <div class="dropdown-content-menu drop-down">
                                     <ul>
-                                        <li><a href=""><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
+                                        <li><a href="{{ route('category.index') }}"><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
+                                        <li><a href="{{ route('brand.index') }}"><i class="bi bi-list-check"></i>{{__('All brands')}}</a></li>
                                         <li><a href=""><i class="bi bi-piggy-bank-fill"></i>{{__('Discount products')}}</a></li>
                                     </ul>
                                 </div>
@@ -88,8 +89,8 @@
                                 <div class="dropdown-admins-menu drop-down">
                                     <ul>
                                         <li><a href={{route('admins.index')}}><i class="bi bi-person-rolodex"></i>{{__('All personal')}}</a></li>
-                                        <li><a href=""><i class="bi bi-person-plus-fill"></i>{{__('Add new admin')}}</a></li>
-                                        <li><a href=""><i class="bi bi-person-check-fill"></i>{{__('Assign roles')}}</a></li>
+                                        <li><a href="{{route('admins.add')}}"><i class="bi bi-person-plus-fill"></i>{{__('Add new admin')}}</a></li>
+                                        <li><a href=""><i class="bi bi-person-check-fill"></i>{{__('Update roles')}}</a></li>
                                     </ul>
                                 </div>
                             </li>

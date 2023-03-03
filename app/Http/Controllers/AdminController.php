@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -48,5 +52,41 @@ class AdminController extends Controller
 
         return redirect()->route('admins.index')->with('success', __('Admin updated'));
     }
+
+    public function add()
+    {
+        return view('admins.add_new_admin');
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . Admin::class],
+        ],
+            [
+                'unique' => 'Коричтувач з таким :attribute вже зареєстрований',
+            ]);
+
+        $password = explode('@', $request->email)[0];
+        $user = Admin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'admin' => true,
+            'password' => Hash::make($password),
+            'phone' => $request->phone,
+        ]);
+
+        event(new Registered($user));
+
+        return redirect()->route('admins.index');
+    }
+
+    public function checkRoles()
+    {
+        return view('admins.roles');
+    }
+
 
 }
