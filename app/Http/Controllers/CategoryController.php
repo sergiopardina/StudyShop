@@ -42,11 +42,11 @@ class CategoryController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $сategory = new Category();
-        $сategory->name = $request->name;
-        $сategory->top = !is_null($request->top);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->top = !is_null($request->top);
 
-        $сategory->save();
+        $category->save();
 
         return redirect()
             ->route('category.index');
