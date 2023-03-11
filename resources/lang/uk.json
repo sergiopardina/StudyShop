@@ -1420,15 +1420,24 @@
     "You are logged in!": "Вітаємо у системі контролю DH Control Systems",
     "Content": "Загальне",
     "All categories": "Усі категорії",
+    "Category": "Категорія",
     "Create new category": "Створити нову категорію",
     "Add category": "Додати категорію",
     "Edit category": "Редагувати категорію",
     "No categories": "Категорії відсутні",
     "All brands": "Усі бренди",
+    "Brand": "Бренд",
     "Create new brand": "Створити новий бренд",
     "Add brand": "Додати бренд",
     "Edit brand": "Редагувати бренд",
     "No brands": "Бренди відсутні",
+    "Products": "Товари",
+    "Create new product": "Створити новий товар",
+    "Add product": "Додати товар",
+    "Edit product": "Редагувати товар",
+    "Description": "Опис",
+    "Price": "Ціна",
+    "Promotion": "Акція",
     "Discount products": "Акційні товари",
     "Orders": "Замовлення",
     "Completed": "Завершені",
@@ -1453,6 +1462,10 @@
     "welcome_to_admin_panel": "Вітаємо в системі контролю StudyShop,",
     "role_type": "Ваш рівень допуску: ",
     "validation.attributes": {
-        "name": "ім'я"
+        "name": "Ім'я",
+        "category_id": "Категорія",
+        "brand_id": "Бренд",
+        "description": "Опис",
+        "price": "Ціна"
     }
 }

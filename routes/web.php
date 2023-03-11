@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +101,19 @@ Route::group(['middleware' => ['setLocale']], function () {
         ->name('brand.update');
     Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
         ->name('brand.destroy');
+
+    Route::get('/product', [ProductController::class, 'index'])
+        ->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])
+        ->name('product.create');
+    Route::post('/product/store', [ProductController::class, 'store'])
+        ->name('product.store');
+    Route::get('/product/edit/{product}', [ProductController::class, 'edit'])
+        ->name('product.edit');
+    Route::put('/product/{product}', [ProductController::class, 'update'])
+        ->name('product.update');
+    Route::delete('/product/{product}', [ProductController::class, 'destroy'])
+        ->name('product.destroy');
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])
     ->name('locale.update');
