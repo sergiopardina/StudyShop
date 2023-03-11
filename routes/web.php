@@ -85,7 +85,6 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('brand.update');
                     Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
                         ->name('brand.destroy');
-
                     Route::get('/catalog', function () {
                         return view('catalog');
                     });
@@ -100,6 +99,8 @@ Route::group(['middleware' => ['setLocale']], function () {
                     });
             });
         });
+
+
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])
     ->name('locale.update');
