@@ -85,21 +85,21 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('brand.update');
                     Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
                         ->name('brand.destroy');
+
+                    Route::get('/catalog', function () {
+                        return view('catalog');
+                    });
+                    Route::get('/about', function () {
+                        return view('about');
+                    });
+                    Route::get('/contacts', function () {
+                        return view('contacts');
+                    });
+                    Route::get('/account', function () {
+                        return view('account');
+                    });
             });
         });
-
-    Route::get('/catalog', function () {
-        return view('catalog');
-    });
-    Route::get('/about', function () {
-        return view('about');
-    });
-    Route::get('/contacts', function () {
-        return view('contacts');
-    });
-    Route::get('/account', function () {
-        return view('account');
-    });
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])
     ->name('locale.update');
