@@ -33,6 +33,7 @@
             });
         </script>
         <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="/css/images.css">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

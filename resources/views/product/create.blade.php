@@ -57,21 +57,11 @@
                                 </label>
                             </div>
 
-{{--                            <div class="container">--}}
-{{--                                <div class="row">--}}
-{{--                                    <label>{{'Download files'}}</label>--}}
-{{--                                    <input type="file" id="fileMulti" name="fileMulti[]" multiple />--}}
-{{--                                </div>--}}
-{{--                                <div class="row">--}}
-{{--                                    <span id="outputMulti"></span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                            <div class="row mb-3 mt-3">
-                                <label>{{'Download files'}}</label>
+                            <div class="mb-3 mt-3">
                                 <input type="file" id="fileMulti" name="fileMulti[]" multiple />
                             </div>
-                            <div class="row mb-3 mt-3">
-                                <span id="outputMulti"></span>
+                            <div class="mb-3 mt-3">
+                                <span id="outputMulti" class="d-flex justify-content-between"></span>
                             </div>
 
                             <div class="mb-3 mt-3">
