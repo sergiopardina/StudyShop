@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,7 +27,7 @@
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="my logo"/>
             </a>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffd26b;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -52,7 +53,7 @@
                         <a class="nav-link" href="/account">{{ __('Personal account') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/cart"><img src="images/carticon.png" alt="Cart"></a>
+                        <a class="nav-link" href="/cart"><i class="bi bi-cart3"></i></a>
                     </li>
                 </ul>
                 <div class="hidden space-x-8 sm:ml-10 sm:flex">

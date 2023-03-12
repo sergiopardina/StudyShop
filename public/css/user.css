@@ -1,5 +1,5 @@
-img {
-    width: 30px;
+.bi-cart3 {
+    font-size: 18px;
 }
 /*nav{*/
 /*    display: flex;*/
@@ -54,10 +54,23 @@ img.logo {
 
 select {
     /*max-height: 90%;*/
-    border: none;
+    border: 1px solid #198754;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 4px;
+}
+
+select:hover{
+
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav a.nav-link:hover {
+    color: #198754;
+}
+
+.dropdown-item:focus, a.dropdown-item:hover {
+    color: #198754;
+    text-shadow: 1px 1px #198754;
 }
 
 /*.dropdown {*/
