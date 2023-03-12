@@ -1,46 +1,69 @@
 img {
-    width: 50px;
+    width: 30px;
 }
-nav{
-    display: flex;
-    align-items: flex-start;
+/*nav{*/
+/*    display: flex;*/
+/*    align-items: flex-start;*/
+/*}*/
+/*ul li{*/
+/*    float: left;*/
+/*    padding: 8px;*/
+/*}*/
+/*.dropbox-catalog {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    padding: 8px;*/
+/*}*/
+/*.dropbox {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    min-width: 140px;*/
+/*    background-color: #f3f4f6;*/
+/*}*/
+/*.dropbox a {*/
+/*    padding: 10px;*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.dropbox a:hover{*/
+/*    background-color: #a0aec0;*/
+/*}*/
+/*.dropbox-catalog:hover .dropbox {*/
+/*    display: block;*/
+/*}*/
+/*.dropbox-catalog:hover{*/
+/*    cursor: pointer;*/
+/*}*/
+img.logo {
+    width: 170px;
 }
-.menu{
-    margin-left: 280px;
+
+.logo-line{
+    background-color: #fff;
+    padding: 0 10px;
 }
-.search_bar{
-    margin-left: 80px;
+
+.main-user-wrapper{
+    padding: 0 10px;
 }
-.cart{
-    margin-left: 80px;
+
+.d-flex {
+    width: 45vw;
 }
-ul li{
-    float: left;
-    padding: 8px;
-}
-.dropbox-catalog {
-    position: relative;
-    display: inline-block;
-    padding: 8px;
-}
-.dropbox {
-    display: none;
-    position: absolute;
-    min-width: 140px;
-    background-color: #f3f4f6;
-}
-.dropbox a {
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-}
-.dropbox a:hover{
-    background-color: #a0aec0;
-}
-.dropbox-catalog:hover .dropbox {
-    display: block;
-}
-.dropbox-catalog:hover{
-    cursor: pointer;
-}
+
+/*.dropdown {*/
+/*    width: 15vw;*/
+/*}*/
+
+/*.dropdown:hover .dropdown-menu {*/
+/*    display: block;*/
+/*}*/
+
+/*.dropdown-toggle {*/
+/*    width: 15vw;*/
+/*}*/
+
+/*.dropdown-menu {*/
+/*    width: 15vw;*/
+/*}*/
