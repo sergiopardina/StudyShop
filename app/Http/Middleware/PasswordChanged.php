@@ -16,12 +16,18 @@ class PasswordChanged
         if (Auth::check())
         {
             $user = Auth::user();
-            if (!$user->must_change_password)
+            if ($user->admin)
             {
-                return $next($request);
+                if (!$user->must_change_password)
+                {
+                    return $next($request);
+                } else
+                {
+                    return redirect()->route('change.password');
+                }
             } else
             {
-                return redirect()->route('change.password');
+                return $next($request);
             }
         }
     }

@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'phone' => '+1234567890',
                 'admin' => true,
+                'telegram' => 'Eger_023',
             ],
             [
                 'name' => 'Pavlo Birsan',
@@ -27,6 +28,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'phone' => '+0987654321',
                 'admin' => true,
+                'telegram' => 'Cropit',
             ],
             [
                 'name' => 'Serkhio Pardina',
@@ -34,6 +36,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'phone' => '+0987633221',
                 'admin' => true,
+                'telegram' => 's_albertovich',
             ],
             [
                 'name' => 'Vladyslav Nikitin',
@@ -41,6 +44,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'phone' => '+0987633221',
                 'admin' => true,
+                'telegram' => 'vladnikitin_lfc',
             ],
         ]);
     }

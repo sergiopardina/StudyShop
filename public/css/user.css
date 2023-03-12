@@ -1,46 +1,104 @@
-img {
-    width: 50px;
+body.antialiased{
+    font-family: "Linux Libertine G";
 }
-nav{
+
+
+div.bg-gray-100 {
+    background: url("../images/bg.png");
+    background-size: 100%;
+
+}
+
+.bi-cart3 {
+    font-size: 18px;
+}
+/*nav{*/
+/*    display: flex;*/
+/*    align-items: flex-start;*/
+/*}*/
+/*ul li{*/
+/*    float: left;*/
+/*    padding: 8px;*/
+/*}*/
+/*.dropbox-catalog {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    padding: 8px;*/
+/*}*/
+/*.dropbox {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    min-width: 140px;*/
+/*    background-color: #f3f4f6;*/
+/*}*/
+/*.dropbox a {*/
+/*    padding: 10px;*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.dropbox a:hover{*/
+/*    background-color: #a0aec0;*/
+/*}*/
+/*.dropbox-catalog:hover .dropbox {*/
+/*    display: block;*/
+/*}*/
+/*.dropbox-catalog:hover{*/
+/*    cursor: pointer;*/
+/*}*/
+img.logo {
+    width: 170px;
+}
+
+.logo-line{
+    background-color: #fff;
+    padding: 0 10px;
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
 }
-.menu{
-    margin-left: 280px;
+
+
+.main-user-wrapper{
+    padding: 0 10px;
 }
-.search_bar{
-    margin-left: 80px;
+
+.d-flex {
+    width: 45vw;
 }
-.cart{
-    margin-left: 80px;
+
+select {
+    /*max-height: 90%;*/
+    border: 1px solid #198754;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 4px;
 }
-ul li{
-    float: left;
-    padding: 8px;
+
+select:hover{
+
 }
-.dropbox-catalog {
-    position: relative;
-    display: inline-block;
-    padding: 8px;
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav a.nav-link:hover {
+    color: #198754;
 }
-.dropbox {
-    display: none;
-    position: absolute;
-    min-width: 140px;
-    background-color: #f3f4f6;
+
+.dropdown-item:focus, a.dropdown-item:hover {
+    color: #198754;
+    text-shadow: 1px 1px #198754;
 }
-.dropbox a {
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-}
-.dropbox a:hover{
-    background-color: #a0aec0;
-}
-.dropbox-catalog:hover .dropbox {
-    display: block;
-}
-.dropbox-catalog:hover{
-    cursor: pointer;
-}
+
+/*.dropdown {*/
+/*    width: 15vw;*/
+/*}*/
+
+/*.dropdown:hover .dropdown-menu {*/
+/*    display: block;*/
+/*}*/
+
+/*.dropdown-toggle {*/
+/*    width: 15vw;*/
+/*}*/
+
+/*.dropdown-menu {*/
+/*    width: 15vw;*/
+/*}*/

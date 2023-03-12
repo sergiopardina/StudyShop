@@ -31,13 +31,20 @@ class AuthenticatedSessionController extends Controller
         if (Auth::check())
         {
             $user = Auth::user();
-            if ($user->must_change_password)
+            if ($user->admin)
             {
-                return redirect()->route('change.password');
+                if ($user->must_change_password)
+                {
+                    return redirect()->route('change.password');
+                } else
+                {
+                    return redirect('admin');
+                }
             } else
             {
-                return view('account');
+                return redirect()->route('welcome');
             }
+
         }
     }
 

@@ -29,7 +29,7 @@ class AuthController
             }
             else
             {
-                return redirect()->route('welcome');
+                abort(404);
             }
         }
         else

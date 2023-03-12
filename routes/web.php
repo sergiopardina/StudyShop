@@ -22,7 +22,7 @@ Route::group(['middleware' => ['setLocale']], function () {
 
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('welcome');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -60,21 +60,6 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('admins.create');
                     Route::get('/admins/roles', [AdminController::class, 'checkRoles'])
                         ->name('admins.roles');
-            });
-        });
-
-    Route::get('/catalog', function () {
-        return view('catalog');
-    });
-    Route::get('/about', function () {
-        return view('about');
-    });
-    Route::get('/contacts', function () {
-        return view('contacts');
-    });
-    Route::get('/account', function () {
-        return view('account');
-    });
 
     Route::get('/category', [CategoryController::class, 'index'])
         ->name('category.index');
@@ -89,18 +74,34 @@ Route::group(['middleware' => ['setLocale']], function () {
     Route::delete('/category/{category}', [CategoryController::class, 'destroy'])
         ->name('category.destroy');
 
-    Route::get('/brand', [BrandController::class, 'index'])
-        ->name('brand.index');
-    Route::get('/brand/create', [BrandController::class, 'create'])
-        ->name('brand.create');
-    Route::post('/brand/store', [BrandController::class, 'store'])
-        ->name('brand.store');
-    Route::get('/brand/edit/{brand}', [BrandController::class, 'edit'])
-        ->name('brand.edit');
-    Route::put('/brand/{brand}', [BrandController::class, 'update'])
-        ->name('brand.update');
-    Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
-        ->name('brand.destroy');
+                    Route::get('/brand', [BrandController::class, 'index'])
+                        ->name('brand.index');
+                    Route::get('/brand/create', [BrandController::class, 'create'])
+                        ->name('brand.create');
+                    Route::post('/brand/store', [BrandController::class, 'store'])
+                        ->name('brand.store');
+                    Route::get('/brand/edit/{brand}', [BrandController::class, 'edit'])
+                        ->name('brand.edit');
+                    Route::put('/brand/{brand}', [BrandController::class, 'update'])
+                        ->name('brand.update');
+                    Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
+                        ->name('brand.destroy');
+                    Route::get('/catalog', function () {
+                        return view('catalog');
+                    });
+                    Route::get('/about', function () {
+                        return view('about');
+                    });
+                    Route::get('/contacts', function () {
+                        return view('contacts');
+                    });
+                    Route::get('/account', function () {
+                        return view('account');
+                    });
+                    Route::get('/category/{name}', [CategoryController::class, 'show'])
+                    ->name('category.show');
+            });
+        });
 
     Route::get('/product', [ProductController::class, 'index'])
         ->name('product.index');

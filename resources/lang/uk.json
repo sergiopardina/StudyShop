@@ -1462,6 +1462,7 @@
     "All Admins": "Всі адміни",
     "welcome_to_admin_panel": "Вітаємо в системі контролю StudyShop,",
     "role_type": "Ваш рівень допуску: ",
+    "Hot Line": "Безкоштовна горяча лінія: 0800008080",
     "validation.attributes": {
         "name": "Ім'я",
         "category_id": "Категорія",

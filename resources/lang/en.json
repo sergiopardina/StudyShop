@@ -1459,13 +1459,14 @@
     "Cart": "Cart",
     "Our graduation project": "Our graduation project",
     "Catalog": "Catalog",
-    "Go to registration": "Go to registration"
+    "Go to registration": "Go to registration",
     "Catalog": "Catalog",
     "Admin updated": "Admin updated successfully",
     "Popular": "Popular",
     "Something wrong": "Something wrong",
     "welcome_to_admin_panel": "Welcome to the control system StudyShop,",
     "role_type": "Your clearance level: ",
+    "Hot Line": "Free hotline: 0800008080",
     "validation.attributes": {
         "name": "Name",
         "category_id": "Category",
