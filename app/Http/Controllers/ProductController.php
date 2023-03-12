@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Photo;
 use App\Models\Product;
 use App\Models\Price;
 use Illuminate\Http\Request;
@@ -64,6 +65,7 @@ class ProductController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
             'price' => 'required',
+            'file' => 'mimes:jpg,jpeg,png',
         ]);
 
         $product = new Product();
@@ -78,6 +80,21 @@ class ProductController extends Controller
         $price->product_id = $product->id;
         $price->price = $request->price;
         $price->save();
+
+        $files = $request->file('fileMulti');
+        if($files) {
+            foreach ($files as $file) {
+
+                $fileName = $product->id . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('images', $fileName, 'public');
+
+                $fileModel = new Photo;
+                $fileModel->name = $fileName;
+                $fileModel->path = '/storage/' . $filePath;
+                $fileModel->product_id = $product->id;
+                $fileModel->save();
+            }
+        }
 
         return redirect()
             ->route('product.index');
@@ -140,8 +157,15 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $photos = $product->photo;
+        foreach ($photos as $photo) {
+            $image_path = public_path('storage\images\\' . $photo->name);
+            if ($photo->exists($image_path)) {
+                unlink($image_path);
+            }
+            $photo->delete($photos);
+        }
         $product->price->delete();
-
         $product->delete();
 
         return redirect()->route('product.index');

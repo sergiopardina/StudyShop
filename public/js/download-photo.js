@@ -13,7 +13,8 @@ function handleFileSelectMulti(evt) {
             return function (e) {
                 // Render thumbnail.
                 let span = document.createElement('span');
-                span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                span.classList.add('img');
+                span.innerHTML = ['<img class="thumb" title="', encodeURI(theFile.name), '" src="', e.target.result, '" / width="200" height="150">'].join('');
                 document.getElementById('outputMulti').insertBefore(span, null);
             };
         })(f);

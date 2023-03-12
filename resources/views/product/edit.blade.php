@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         @include('common.errors')
 
-                        <form action="{{ route('product.update', $product->id) }}" method="POST" class="form-horizontal">
+                        <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
 
