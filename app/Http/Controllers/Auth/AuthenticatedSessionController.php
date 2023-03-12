@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
                     return redirect()->route('change.password');
                 } else
                 {
-                    return view('account');
+                    return redirect('admin');
                 }
             }
 
