@@ -53,7 +53,10 @@ img.logo {
 .logo-line{
     background-color: #fff;
     padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .main-user-wrapper{
     padding: 0 10px;

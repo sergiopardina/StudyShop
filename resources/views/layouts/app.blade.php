@@ -26,6 +26,7 @@
             <a href="{{ route('welcome') }}">
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="my logo"/>
             </a>
+            <span>{{__('Hot Line')}}</span>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -49,9 +50,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">{{ __('Contacts') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account">{{ __('Personal account') }}</a>
-                    </li>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <li class="nav-item" style="border: 1px solid #fff; border-radius: 5px">
+                            <a class="nav-link active" href="/account">{{ \Illuminate\Support\Facades\Auth::user()->name  }}</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/account">{{ __('Personal account') }}</a>
+                        </li>
+                    @endif
+
                     <li class="nav-item">
                         <a class="nav-link" href="/cart"><i class="bi bi-cart3"></i></a>
                     </li>
