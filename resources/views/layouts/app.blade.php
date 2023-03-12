@@ -55,9 +55,18 @@
                         <a class="nav-link" href="/cart"><img src="images/carticon.png" alt="Cart"></a>
                     </li>
                 </ul>
+                <div class="hidden space-x-8 sm:ml-10 sm:flex">
+                    <form method="POST" action="{{ route('locale.update') }}">
+                        @csrf
+                        <select name="locale" onchange="this.form.submit()">
+                            <option class="flag flag-usa" value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
+                            <option class="flag flag-uk" value="uk" {{ app()->getLocale() == 'uk' ? 'selected' : '' }}>UA</option>
+                        </select>
+                    </form>
+                </div>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="{{__('Search')}}" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">{{__('Search')}}</button>
                 </form>
             </div>
         </nav>

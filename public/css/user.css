@@ -52,6 +52,14 @@ img.logo {
     width: 45vw;
 }
 
+select {
+    /*max-height: 90%;*/
+    border: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 4px;
+}
+
 /*.dropdown {*/
 /*    width: 15vw;*/
 /*}*/
