@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,18 +61,18 @@ Route::group(['middleware' => ['setLocale']], function () {
                     Route::get('/admins/roles', [AdminController::class, 'checkRoles'])
                         ->name('admins.roles');
 
-                    Route::get('/category', [CategoryController::class, 'index'])
-                        ->name('category.index');
-                    Route::get('/category/create', [CategoryController::class, 'create'])
-                        ->name('category.create');
-                    Route::post('/category/store', [CategoryController::class, 'store'])
-                        ->name('category.store');
-                    Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])
-                        ->name('category.edit');
-                    Route::put('/category/{category}', [CategoryController::class, 'update'])
-                        ->name('category.update');
-                    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])
-                        ->name('category.destroy');
+    Route::get('/category', [CategoryController::class, 'index'])
+        ->name('category.index');
+    Route::get('/category/create', [CategoryController::class, 'create'])
+        ->name('category.create');
+    Route::post('/category/store', [CategoryController::class, 'store'])
+        ->name('category.store');
+    Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])
+        ->name('category.edit');
+    Route::put('/category/{category}', [CategoryController::class, 'update'])
+        ->name('category.update');
+    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])
+        ->name('category.destroy');
 
                     Route::get('/brand', [BrandController::class, 'index'])
                         ->name('brand.index');
@@ -105,6 +106,18 @@ Route::group(['middleware' => ['setLocale']], function () {
                     });
                     Route::get('/category/{name}', [CategoryController::class, 'show'])
                     ->name('category.show');
+                    Route::get('/product', [ProductController::class, 'index'])
+                        ->name('product.index');
+                    Route::get('/product/create', [ProductController::class, 'create'])
+                        ->name('product.create');
+                    Route::post('/product/store', [ProductController::class, 'store'])
+                        ->name('product.store');
+                    Route::get('/product/edit/{product}', [ProductController::class, 'edit'])
+                        ->name('product.edit');
+                    Route::put('/product/{product}', [ProductController::class, 'update'])
+                        ->name('product.update');
+                    Route::delete('/product/{product}', [ProductController::class, 'destroy'])
+                        ->name('product.destroy');
             });
         });
 

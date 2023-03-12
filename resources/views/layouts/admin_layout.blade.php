@@ -33,6 +33,7 @@
             });
         </script>
         <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="/css/images.css">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -63,6 +64,7 @@
                                     <ul>
                                         <li><a href="{{ route('category.index') }}"><i class="bi bi-list-check"></i>{{__('All categories')}}</a></li>
                                         <li><a href="{{ route('brand.index') }}"><i class="bi bi-list-check"></i>{{__('All brands')}}</a></li>
+                                        <li><a href="{{ route('product.index') }}"><i class="bi bi-list-check"></i>{{__('Products')}}</a></li>
                                         <li><a href=""><i class="bi bi-piggy-bank-fill"></i>{{__('Discount products')}}</a></li>
                                     </ul>
                                 </div>
