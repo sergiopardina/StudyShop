@@ -55,9 +55,14 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show($name)
     {
-        //
+        $category = Category::where('name', $name)->firstOrFail();
+        $products = $category->products;
+        return view('category', [
+           'products' => $products,
+            'name' => $name,
+        ]);
     }
 
     /**

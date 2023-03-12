@@ -37,7 +37,7 @@
                         @if(isset($categories))
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @foreach($categories as $category)
-                                    <li><a class="dropdown-item" href="">{{$category->name}}</a></li>
+                                    <li><a class="dropdown-item" href="{{route('category.show', $category->name)}}">{{$category->name}}</a></li>
                                 @endforeach
                             </ul>
                         @endif

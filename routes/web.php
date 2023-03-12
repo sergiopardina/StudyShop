@@ -97,6 +97,8 @@ Route::group(['middleware' => ['setLocale']], function () {
                     Route::get('/account', function () {
                         return view('account');
                     });
+                    Route::get('/category/{name}', [CategoryController::class, 'show'])
+                    ->name('category.show');
             });
         });
 
