@@ -1,3 +1,9 @@
+div.bg-gray-100 {
+    background: url("../images/bg.png");
+    background-size: 100%;
+
+}
+
 .bi-cart3 {
     font-size: 18px;
 }
