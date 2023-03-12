@@ -97,6 +97,12 @@ Route::group(['middleware' => ['setLocale']], function () {
                     Route::get('/account', function () {
                         return view('account');
                     });
+                    Route::get('/cart', function () {
+                        return view('cart');
+                    });
+                    Route::get('/accedit', function () {
+                        return view('accedit');
+                    });
                     Route::get('/category/{name}', [CategoryController::class, 'show'])
                     ->name('category.show');
             });
