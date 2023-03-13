@@ -83,25 +83,6 @@
 
     <!-- Page Content -->
     <main class="main-user-wrapper" style="display: inline-flex">
-        @if(\Illuminate\Support\Facades\Auth::check())
-            <div id="lsb" class="lsb navbar-dark bg-dark" style="width: 180px">
-                <ul>
-                    <li><a href="/accedit">{{ __('My account') }}</a></li>
-                    <li><a href="/cart">{{ __('My orders') }}</a></li>
-                    <li><form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                             onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form></li>
-                </ul>
-            </div>
-        @else
-            <div id="empty" class="empty" style="width: 180px"></div>
-        @endif
         <div id="content" class="content">
             @yield('content')
         </div>
