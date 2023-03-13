@@ -61,18 +61,18 @@ Route::group(['middleware' => ['setLocale']], function () {
                     Route::get('/admins/roles', [AdminController::class, 'checkRoles'])
                         ->name('admins.roles');
 
-    Route::get('/category', [CategoryController::class, 'index'])
-        ->name('category.index');
-    Route::get('/category/create', [CategoryController::class, 'create'])
-        ->name('category.create');
-    Route::post('/category/store', [CategoryController::class, 'store'])
-        ->name('category.store');
-    Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])
-        ->name('category.edit');
-    Route::put('/category/{category}', [CategoryController::class, 'update'])
-        ->name('category.update');
-    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])
-        ->name('category.destroy');
+                    Route::get('/category', [CategoryController::class, 'index'])
+                        ->name('category.index');
+                    Route::get('/category/create', [CategoryController::class, 'create'])
+                        ->name('category.create');
+                    Route::post('/category/store', [CategoryController::class, 'store'])
+                        ->name('category.store');
+                    Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])
+                        ->name('category.edit');
+                    Route::put('/category/{category}', [CategoryController::class, 'update'])
+                        ->name('category.update');
+                    Route::delete('/category/{category}', [CategoryController::class, 'destroy'])
+                        ->name('category.destroy');
 
                     Route::get('/brand', [BrandController::class, 'index'])
                         ->name('brand.index');
@@ -86,15 +86,10 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('brand.update');
                     Route::delete('/brand/{brand}', [BrandController::class, 'destroy'])
                         ->name('brand.destroy');
-                    Route::get('/catalog', function () {
-                        return view('catalog');
-                    });
-                    Route::get('/about', function () {
-                        return view('about');
-                    });
-                    Route::get('/contacts', function () {
-                        return view('contacts');
-                    });
+//                    Route::get('/catalog', function () {
+//                        return view('catalog');
+//                    });
+
                     Route::get('/account', function () {
                         return view('account');
                     });
@@ -104,8 +99,7 @@ Route::group(['middleware' => ['setLocale']], function () {
                     Route::get('/accedit', function () {
                         return view('accedit');
                     });
-                    Route::get('/category/{name}', [CategoryController::class, 'show'])
-                    ->name('category.show');
+
                     Route::get('/product', [ProductController::class, 'index'])
                         ->name('product.index');
                     Route::get('/product/create', [ProductController::class, 'create'])
@@ -118,12 +112,18 @@ Route::group(['middleware' => ['setLocale']], function () {
                         ->name('product.update');
                     Route::delete('/product/{product}', [ProductController::class, 'destroy'])
                         ->name('product.destroy');
-            });
+                });
         });
-
-
+    Route::get('/about', function () {
+        return view('about');
+    });
+    Route::get('/contacts', function () {
+        return view('contacts');
+    });
+    Route::get('/category/{name}', [CategoryController::class, 'show'])
+        ->name('category.show');
 });
 Route::post('/locale', [App\Http\Controllers\LocaleController::class, 'update'])
     ->name('locale.update');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
