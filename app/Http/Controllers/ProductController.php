@@ -26,7 +26,7 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
 
         $this->categories = Category::all()->sortBy('name');
         $this->brands = Brand::all()->sortBy('name');
@@ -169,5 +169,23 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('product.index');
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $products = Product::join('photos', 'products.id', '=', 'photos.product_id')
+            ->where('products.name', 'like', '%'.$query.'%')
+            ->groupBy('products.id')
+            ->select('products.name', 'products.description', Product::raw('GROUP_CONCAT(photos.path) as photos'))
+            ->get();
+
+//        $query = $request->input('query');
+//        $category = $request->input('query');
+//        $products = Product::where('name', 'like', '%'.$query.'%')
+//            ->get();
+
+        return view('search_area', ['products' => $products]);
     }
 }
