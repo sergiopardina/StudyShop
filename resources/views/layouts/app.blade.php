@@ -11,12 +11,13 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="/css/user.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
           integrity="..." crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{asset('js/photoSlider.js')}}"></script>
 </head>
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100">
@@ -73,8 +74,8 @@
                         </select>
                     </form>
                 </div>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="{{__('Search')}}" aria-label="Search">
+                <form class="d-flex" method="GET", action="{{route('search')}}">
+                    <input class="form-control me-2" type="search" placeholder="{{__('Search')}}" name="query" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">{{__('Search')}}</button>
                 </form>
             </div>
@@ -84,6 +85,7 @@
     <!-- Page Content -->
     <main class="main-user-wrapper" style="display: inline-flex">
         <div id="content" class="content">
+            @yield('javascript')
             @yield('content')
         </div>
     </main>
@@ -91,8 +93,10 @@
         <p>{{ __('Our graduation project') }} &copy; 2023</p>
     </footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="..." crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="..."
-        crossorigin="anonymous"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

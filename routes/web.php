@@ -21,8 +21,10 @@ use App\Http\Controllers\ProductController;
 */
 Route::group(['middleware' => ['setLocale']], function () {
 
-    Route::get('/', function () {
+    Route::get('/search_area', [ProductController::class, 'search'])
+        ->name('search');
 
+    Route::get('/', function () {
         $products = DB::table('products')
             ->join('photos', 'products.id', '=', 'photos.product_id')
             ->where('top_discount', '=', 1)
