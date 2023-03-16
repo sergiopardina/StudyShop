@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
@@ -21,7 +22,17 @@ use App\Http\Controllers\ProductController;
 Route::group(['middleware' => ['setLocale']], function () {
 
     Route::get('/', function () {
-        return view('welcome');
+        //$photos = DB::table('photos')->where('product_id', '=', 1)->get();
+
+        $products = DB::table('products')
+            ->join('photos', 'products.id', '=', 'photos.product_id')
+            ->where('top_discount', '=', 1)
+            ->groupBy('products.id')
+            ->select('products.name', 'products.description', DB::raw('GROUP_CONCAT(photos.path) as photos'))
+            ->get();
+        return view('welcome', [
+            'products' => $products,
+        ]);
     })->name('welcome');
 
     Route::get('/dashboard', function () {
