@@ -15,6 +15,7 @@ If you're working in the Open Server built-in console, you need to execute the c
 7. Next, you need to execute the following commands:
     - php artisan migrate - to migrate tables
     - php artisan db:seed --class=UsersTableSeeder - to create test users. (The standard password is "password," and you'll need to change it when you first log into the system.)
+    - php artisan storage:link
 The project is ready for evaluation.
 We may have missed something in it, but as they say, we didn't "not have time" but implemented the project by a few percent less than 100.
 
@@ -32,6 +33,7 @@ We may have missed something in it, but as they say, we didn't "not have time" b
 7. Далее Вам необходимо выполнить следующие команды:
     - php artisan migrate - для миграции таблиц
     - php artisan db:seed --class=UsersTableSeeder - для создания тестовых юзеров. (стандартный пароль "password" и Вам придется его сменить при первом входе в систему).
+    - php artisan storage:link
 
 Проект готов к оценке.
 Может быть мы что-то и не доделали в нем, но как принято говорить, мы не "не успели", а выполнили реализацию проекта на несколько процентов меньше от 100.

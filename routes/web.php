@@ -22,7 +22,6 @@ use App\Http\Controllers\ProductController;
 Route::group(['middleware' => ['setLocale']], function () {
 
     Route::get('/', function () {
-        //$photos = DB::table('photos')->where('product_id', '=', 1)->get();
 
         $products = DB::table('products')
             ->join('photos', 'products.id', '=', 'photos.product_id')
