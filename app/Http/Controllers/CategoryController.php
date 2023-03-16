@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -59,9 +60,17 @@ class CategoryController extends Controller
     {
         $category = Category::where('name', $name)->firstOrFail();
         $products = $category->products;
+        $photos = DB::table('photos')
+            ->join('products', 'photos.product_id', '=', 'products.id')
+            ->whereIn('photos.product_id', $category->products->pluck('id'))
+            ->groupBy('products.id')
+            ->select(DB::raw('GROUP_CONCAT(photos.path) as photos'))
+            ->get();
+
         return view('category', [
            'products' => $products,
             'name' => $name,
+            'photos' => $photos,
         ]);
     }
 
