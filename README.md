@@ -1,4 +1,4 @@
-<p align="center"><a href="//studyshopgroup/" target="_blank"><img src="public/images/logo.png" alt="Logo"></a></p>
+<p align="center"><a href="//studyshop/" target="_blank"><img src="public/images/logo.png" alt="Logo"></a></p>
 
 <p>We are a progressive team of young PHP specialists. Here is our final project.</p>
 <p>Acknowledgements: to Anton Seryapov for providing comprehensive training and supervision throughout the entire course.</p>
