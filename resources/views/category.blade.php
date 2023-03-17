@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h2>{{$name}}</h2>
+{{--    <h2>{{$name}}</h2>--}}
     @if(isset($products))
         @php
             $iterationCount = 0
