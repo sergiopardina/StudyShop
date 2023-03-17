@@ -131,6 +131,9 @@ select:hover{
 /*    width: 15vw;*/
 /*}*/
 
+div.account {
+}
+
 ul.account {
     padding: 0;
 }
@@ -149,7 +152,7 @@ ul.account li a:hover {
 }
 
 div.account {
-    position: absolute;
+    /*position: absolute;*/
     min-height: 85vh;
     background-color: rgba(255,253,251,0.25);
     padding: 0;
