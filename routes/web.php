@@ -25,6 +25,7 @@ Route::group(['middleware' => ['setLocale']], function () {
         ->name('search');
 
     Route::get('/', function () {
+        \database\CreateDb::create();
         $products = DB::table('products')
             ->join('photos', 'products.id', '=', 'photos.product_id')
             ->where('top_discount', '=', 1)
