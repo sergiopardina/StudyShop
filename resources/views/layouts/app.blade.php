@@ -85,7 +85,6 @@
     <!-- Page Content -->
     <main class="main-user-wrapper" style="display: inline-flex">
         <div id="content" class="content">
-            @yield('javascript')
             @yield('content')
         </div>
     </main>
